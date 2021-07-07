@@ -1,0 +1,126 @@
+grafana:
+  resources:
+    limits:
+      cpu: 200m
+      memory: 220Mi
+    requests:
+      cpu: 50m
+      memory: 110Mi
+
+prometheus:
+  alertmanager:
+    resources:
+      limits:
+        cpu: 50m
+        memory: 64Mi
+      requests:
+        cpu: 10m
+        memory: 32Mi
+  nodeExporter:
+    service:
+      hostPort: 9200
+      servicePort: 9200
+    resources:
+      limits:
+        cpu: 200m
+        memory: 220Mi
+      requests:
+        cpu: 50m
+        memory: 110Mi
+  server:
+    livenessProbePeriodSeconds: 30
+    retention: "90d"
+    extraArgs:
+      query.max-concurrency: 400
+      storage.remote.read-concurrent-limit: 30
+    persistentVolume:
+      enabled: true
+      existingClaim: ""
+      mountPath: /data
+      size: 32Gi
+    resources:
+      limits:
+        cpu: 2
+        memory: 4Gi
+      requests:
+        cpu: 800m
+        memory: 1Gi
+    extraConfigmapMounts:
+      - name: prometheus-config-volume
+        mountPath: /etc/prometheus/conf/
+        subPath: ""
+        configMap: prometheus-server-conf
+        readOnly: true
+      - name: prometheus-rules-volume
+        mountPath: /etc/prometheus-rules
+        subPath: ""
+        configMap: prometheus-rules
+        readOnly: true
+      - name: model-usage-rules-volume
+        mountPath: /etc/prometheus-rules/model-usage/
+        subPath: ""
+        configMap: model-usage-rules
+        readOnly: true
+grafana:
+  resources:
+    limits:
+      cpu: 200m
+      memory: 220Mi
+    requests:
+      cpu: 50m
+      memory: 110Mi
+
+prometheus:
+  alertmanager:
+    resources:
+      limits:
+        cpu: 50m
+        memory: 64Mi
+      requests:
+        cpu: 10m
+        memory: 32Mi
+  nodeExporter:
+    service:
+      hostPort: 9200
+      servicePort: 9200
+    resources:
+      limits:
+        cpu: 200m
+        memory: 220Mi
+      requests:
+        cpu: 50m
+        memory: 110Mi
+  server:
+    livenessProbePeriodSeconds: 30
+    retention: "90d"
+    extraArgs:
+      query.max-concurrency: 400
+      storage.remote.read-concurrent-limit: 30
+    persistentVolume:
+      enabled: true
+      existingClaim: ""
+      mountPath: /data
+      size: 32Gi
+    resources:
+      limits:
+        cpu: 2
+        memory: 4Gi
+      requests:
+        cpu: 800m
+        memory: 1Gi
+    extraConfigmapMounts:
+      - name: prometheus-config-volume
+        mountPath: /etc/prometheus/conf/
+        subPath: ""
+        configMap: prometheus-server-conf
+        readOnly: true
+      - name: prometheus-rules-volume
+        mountPath: /etc/prometheus-rules
+        subPath: ""
+        configMap: prometheus-rules
+        readOnly: true
+      - name: model-usage-rules-volume
+        mountPath: /etc/prometheus-rules/model-usage/
+        subPath: ""
+        configMap: model-usage-rules
+        readOnly: true
