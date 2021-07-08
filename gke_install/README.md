@@ -64,13 +64,6 @@ gcloud container clusters update $NAME \
 
 *Ref.: https://cloud.google.com/anthos/run/docs/setup#existing_cluster*
 
-## Configure Istio for Seldon
-
-```
-kubectl apply -n gke-system -f seldon-gateway.yaml
-```
-
-*Ref.: https://deploy-v1-1.seldon.io/docs/getting-started/production-installation/istio/*
 
 ## Firewall Rule (Private Networks ONLY)
 
@@ -132,6 +125,14 @@ metadata:
   namespace: seldon-logs
 EOF
 ```
+
+## Configure Istio for Seldon
+
+```
+kubectl apply -n gke-system -f seldon-gateway.yaml
+```
+
+*Ref.: https://deploy-v1-1.seldon.io/docs/getting-started/production-installation/istio/*
 
 ## Install Seldon Core
 
