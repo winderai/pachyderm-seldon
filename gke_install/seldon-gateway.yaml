@@ -2,11 +2,10 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: seldon-gateway
-  namespace: gke-system
 spec:
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
+    app: ingressgateway
+    istio: ingress-gke-system
   servers:
   - hosts:
     - '*'
