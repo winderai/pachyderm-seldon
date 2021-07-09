@@ -123,9 +123,6 @@ kubectl rollout status -n knative-eventing deployment/imc-controller
 *Ref.: https://deploy-v1-1.seldon.io/docs/getting-started/production-installation/request-logging/#install-knative-eventing*
 
 ## Dowload Seldon Deploy repo:
-=======
-## Download Seldon Deploy
->>>>>>> s3_inputs_v3
 
 ```
 TAG=1.1.2 && \
@@ -178,7 +175,6 @@ kubectl rollout status deployment/kibana-kibana -n seldon-logs
 
 *Ref.: https://deploy-v1-1.seldon.io/docs/getting-started/production-installation/request-logging/#fluentd-and-kibana*
 
-<<<<<<< HEAD
 ## Configure Knative Event broker
 
 ```
@@ -195,8 +191,6 @@ EOF
 
 *Ref.: https://deploy-v1-1.seldon.io/docs/getting-started/production-installation/request-logging/#configure-knative-event-broker*
 
-=======
->>>>>>> s3_inputs_v3
 ## Knative Serving
 
 ```
