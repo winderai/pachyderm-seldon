@@ -8,3 +8,4 @@ Repository content:
     * `tutorial.ipynb`: Pachyderm/Seldon integration demo
     * `data`: datasets folder
     * various Training/Deployer folders containing related Docker Images, build them with `make build`
+    * various `sh` scripts, used in the demo notebook
