@@ -55,10 +55,15 @@ kubectl apply -n istio-system -f seldon-gateway.yaml
 ```
 KNATIVE_EVENTING_URL=https://github.com/knative/eventing/releases/download
 EVENTING_VERSION=v0.18.3
+
 kubectl apply --filename ${KNATIVE_EVENTING_URL}/${EVENTING_VERSION}/eventing-crds.yaml
+
 kubectl apply --filename ${KNATIVE_EVENTING_URL}/${EVENTING_VERSION}/eventing-core.yaml
+
 kubectl apply --filename ${KNATIVE_EVENTING_URL}/${EVENTING_VERSION}/in-memory-channel.yaml
+
 kubectl apply --filename ${KNATIVE_EVENTING_URL}/${EVENTING_VERSION}/mt-channel-broker.yaml
+
 kubectl rollout status -n knative-eventing deployment/imc-controller
 ```
 
