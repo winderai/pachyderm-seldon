@@ -1,4 +1,4 @@
-# Pachyderm - Seldon Deploy integration
+# Pachyderm - Seldon Deploy Integration: Monitoring and Provenance for Machine Learning Models
 
 Repository content:
 
