@@ -102,7 +102,6 @@ kubectl rollout status deploy/seldon-controller-manager -n seldon-system
 
 *Ref.: https://deploy-v1-1.seldon.io/docs/getting-started/production-installation/seldon/#seldon-core-installation*
 
-<<<<<<< HEAD
 ## Install Knative Eventing
 
 ```
