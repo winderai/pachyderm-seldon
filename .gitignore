@@ -17,3 +17,4 @@ minikube_install/fluentd-values.yaml
 repo/secret.yaml
 repo/_tmp/
 !repo/data/*.json
+repo/dataset-prep.ipynb
