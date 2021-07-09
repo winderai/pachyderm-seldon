@@ -199,9 +199,13 @@ EOF
 
 ```
 kubectl apply -f https://github.com/knative/serving/releases/download/v0.18.3/serving-crds.yaml
+
 kubectl apply -f https://github.com/knative/serving/releases/download/v0.18.3/serving-core.yaml
+
 kubectl apply -f https://github.com/knative-sandbox/net-istio/releases/download/v0.22.0/istio.yaml
+
 kubectl apply -f https://github.com/knative-sandbox/net-istio/releases/download/v0.18.0/net-istio.yaml
+
 kubectl --namespace istio-system get service istio-ingressgateway
 kubectl get pods --namespace knative-serving
 ```
